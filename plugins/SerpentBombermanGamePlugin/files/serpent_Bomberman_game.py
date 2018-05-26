@@ -14,7 +14,7 @@ class SerpentBombermanGame(Game, metaclass=Singleton):
 
         kwargs["window_name"] = "Safari"
         
-        kwargs["url"] = "http://bombergirl.matousskala.cz"
+        kwargs["url"] = "https://gd-bomberman.herokuapp.com"
         kwargs["browser"] = WebBrowser.DEFAULT
 
         super().__init__(**kwargs)
@@ -25,9 +25,9 @@ class SerpentBombermanGame(Game, metaclass=Singleton):
     @property
     def screen_regions(self):
         regions = {
-            "GAME_REGION": (148, 124, 693, 540), ##545x416
-            "GAME_OVER_REGION": (320,245, 480 ,270),
-            "WIN_REGION": (320,245, 480 ,270),
+            "GAME_REGION": (0, 0, 545, 416), ##545x416
+            "GAME_OVER_REGION": (0,0, 160 ,25),
+            "WIN_REGION": (0,0, 160 ,25),
         }
 
         return regions

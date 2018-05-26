@@ -29,6 +29,8 @@ class SerpentBombermanGameAgent(GameAgent):
 				self.frame_handlers["PLAY"] = self.handle_play
 
 				self.frame_handler_setups["PLAY"] = self.setup_play
+				self.frame_handler_setups["GAME_OVER"] = self.setup_gameover
+				self.frame_handler_setups["START_GAME"] = self.setup_gameover
 
 		def setup_play(self):
 				game_inputs = {
@@ -49,6 +51,11 @@ class SerpentBombermanGameAgent(GameAgent):
 				self.game_over = False
 				self.run_count = 0
 				self.run_reward = 0
+
+		def setup_gameover(self):
+			game_inputs = {
+				"Play again": [KeyboardKey.KEY_ENTER]
+			}
 
 
 		def handle_play(self, game_frame):
